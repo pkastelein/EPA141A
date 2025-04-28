@@ -2,7 +2,6 @@ import math
 import numpy as np
 from scipy.optimize import brentq
 
-
 def lake_problem(
         b=0.42,         # Decay parameter for P in lake (0.42 = irreversible)
         q=2.0,          # Recycling exponent
