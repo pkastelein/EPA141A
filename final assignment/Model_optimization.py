@@ -14,11 +14,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def run_optimization():  # ✅ Add this function
+def run_optimization(nfe=200, epsilion = 1):  # ✅ Add this function
     ema_logging.log_to_stderr(ema_logging.INFO)
 
     model, steps = get_model_for_problem_formulation(2)
 
+    if epsilion == 1:
+        epsilons = [1e3] * len(model.outcomes)
 
     reference_values = {
         "Bmax": 175,
@@ -40,8 +42,7 @@ def run_optimization():  # ✅ Add this function
 
     ref_scenario = Scenario("reference", **scen1)
     convergence_metrics = [EpsilonProgress()]
-    epsilons = [1e3] * len(model.outcomes)
-    nfe = 200  # proof of principle only
+    
 
     with MultiprocessingEvaluator(model) as evaluator:
         results, convergence = evaluator.optimize(
