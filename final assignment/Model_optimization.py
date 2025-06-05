@@ -57,14 +57,14 @@ def run_optimization(nfe=200, epsilion = 1):  # ✅ Add this function
 
     from ema_workbench.analysis import parcoords
 
-    outcomes = results.loc[:,
-               ['Expected Annual Damage', 'Dike Investment Costs', 'RfR Investment Costs', 'Evacuation Costs',
-                'Expected Number of Deaths']]
-    limits = parcoords.get_limits(outcomes)
-    axes = parcoords.ParallelAxes(limits)
-    axes.plot(outcomes)
+    #outcomes = results.loc[:,
+    #           ['Expected Annual Damage', 'Dike Investment Costs', 'RfR Investment Costs', 'Evacuation Costs',
+     #           'Expected Number of Deaths']]
+    #limits = parcoords.get_limits(outcomes)
+    #axes = parcoords.ParallelAxes(limits)
+    #axes.plot(outcomes)
     # we invert this axis so direction of desirability is the same
-    plt.show()
+    #plt.show()
 
 
    # fig, ax1 = plt.subplots(ncols=1)
